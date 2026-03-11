@@ -47,17 +47,17 @@ int main() {
 
 	OrkMoves orkTurnOptions;
 	// The option for the Ork to do a melee attack, with its damage being reduced by the random amount selected by the randomiser
-	orkTurnOptions.MeleeAttack = orkBaseStats.Damage - humanBaseStats.DamageReduction;
+	orkTurnOptions.MeleeAttack = humanBaseStats.Health - (orkBaseStats.Damage - humanBaseStats.DamageReduction);
 	// The option to dodge the next attack from the human by just minusing the value of the damage/magic damage so no health is lost
 	orkTurnOptions.DodgeAttack = humanBaseStats.Damage - 35 or humanBaseStats.MagicDamage - 40;
 	// This is the ranged option for the Ork so that both mobs have some sort of ranged option, and uses the same formula as the melee attack
-	orkTurnOptions.ThrowWeapon = orkBaseStats.Damage - humanBaseStats.DamageReduction;
+	orkTurnOptions.ThrowWeapon = humanBaseStats.Health - (orkBaseStats.Damage - humanBaseStats.DamageReduction);
 
 	HumanMoves humanTurnOptions;
 	// This is essentially the same as the Ork melee attack
-	humanTurnOptions.MeleeAttack = humanBaseStats.Damage - orkBaseStats.DamageReduction;
+	humanTurnOptions.MeleeAttack = orkBaseStats.Health - (humanBaseStats.Damage - orkBaseStats.DamageReduction);
 	// This is essentially the same as the Ork dodge, but with only one damage removal formula since the Ork only has one
 	humanTurnOptions.DodgeAttack = orkBaseStats.Damage - 40;
 	// This is for the human's magic ranged attack, but isn't affected by the Ork's DR since a magic attack would be able to penetrate any armour
-	humanTurnOptions.MagicRanged = humanBaseStats.MagicDamage;
+	humanTurnOptions.MagicRanged = orkBaseStats.Health - humanBaseStats.MagicDamage;
 }
