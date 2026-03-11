@@ -4,8 +4,7 @@
 #include <cassert>
 #include <vector>
 using namespace std;
-
-// NEED TO CHANGE THIS SO IT FOLLOWS THE INSTRUCTIONS OF TASK 7 SO IT SORTS IN PAIRS AND NOT INDIVIDUALLY
+void sort(int myArray[], int size);
 
 int main() {
 	int myArray[]{ 67, 13, 3, 89, 43, 2, 19, 71, 5, 61, 97, 7, 37, 31, 17, 11, 83, 53, 23, 29 }; // This has all the numbers in the array, and can be in whatever order

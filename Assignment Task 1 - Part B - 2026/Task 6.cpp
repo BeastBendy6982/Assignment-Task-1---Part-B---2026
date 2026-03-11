@@ -5,7 +5,6 @@
 #include <vector>
 using namespace std;
 
-
 int findElement(int arr[], int n, int key) { // Used as the base to search for if the input is in the array
     int i;
     for (i = 0; i < n; i++) // The continuous loop to check the entire array for the input
