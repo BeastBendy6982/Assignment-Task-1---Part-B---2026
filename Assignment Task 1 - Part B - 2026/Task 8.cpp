@@ -5,4 +5,4 @@
 #include <vector>
 using namespace std;
 
-// Complete task 7 before going through with task 8
+// Task 8 needs the code from both task 7 and task 6 in order to be completed
